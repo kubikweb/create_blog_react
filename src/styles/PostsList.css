@@ -1,6 +1,6 @@
 .posts{
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     width: 90%;
     border: 1px solid black;
     flex-wrap: wrap;
