@@ -7,10 +7,7 @@ const PostsPage =({match})=> {
     return (
         <>
             <Link to="/posts_list">Powrót do wszystkich artykułów</Link>
-            <div className={"singlePost"}>
-               <SinglePost id={match.params.id}/>
-            </div>
-
+            <SinglePost id={match.params.id}/>
         </>
     )
 };

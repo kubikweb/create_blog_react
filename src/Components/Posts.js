@@ -12,9 +12,9 @@ const Posts =(props) => {
                     <p>{post.date}</p>
                     <p>{post.author}</p>
                     <p>{post.text}</p>
-                    <span><Link to={`/article/${post.id}-${post.title}-${post.date}`}>
+                    <Link to={`/post/${post.id}-${post.title}-${post.date}`}>
                             Zobacz więcej
-                        </Link></span>
+                        </Link>
                 </div>
             </Router>
 
