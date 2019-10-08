@@ -1,20 +1,27 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './Blog.css';
 import PostsList from "./Components/PostsList";
 import PostsPage from "./Components/PostsPage";
-import {BrowserRouter as Router,  Route} from "react-router-dom"
+import AddNewPost from "./Components/AddNewPost";
+import {BrowserRouter as Router,  Link, Route} from "react-router-dom"
 
 
 
-class Blog extends Component{
+const Blog = () => {
 
-
-  render() {
     return(
         <Router>
+            <header>
+                <nav>
+                    <ul>
+                        <li><Link to="/add_new_post">Dodaj nowy post</Link></li>
+                        <li><Link to="/posts_list">Wyświetl wszystkie posty</Link></li>
+                    </ul>
+                </nav>
+            </header>
             <div className="blog">
-                <button>Dodaj post</button>
                 <div className={"container"}>
+                    <Route path="/add_new_post" component={AddNewPost}/>
                     <Route path="/posts_list" component={PostsList}/>
                     <Route path="/post/:id" component={PostsPage}/>
                 </div>
@@ -22,7 +29,6 @@ class Blog extends Component{
         </Router>
 
     )
-  }
-}
+};
 
 export default Blog;
