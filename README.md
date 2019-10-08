@@ -1,1 +1,1 @@
-I'm creating blog application.
+I'm creating a blog application.
