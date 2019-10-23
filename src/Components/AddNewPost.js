@@ -1,10 +1,13 @@
 import React from "react";
-import {connect} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import actions from "../app/actions";
 import store from "../store";
 // import mapDispatchToProps from "react-redux/es/connect/mapDispatchToProps";
 
 const AddNewPost = ({add}) => {
+
+    const dispatch = useDispatch();
+    const id = useSelector(state => state.id);
 
     const title  = React.createRef();
     const date  = React.createRef();
@@ -13,14 +16,14 @@ const AddNewPost = ({add}) => {
 
     const submitNewPost = (e) => {
         e.preventDefault();
-        add({
+        dispatch(actions.addId());
+        dispatch(actions.add({
+            id: id,
             title: title.current.value,
             date: date.current.value,
             author: author.current.value,
             text: text.current.value,
-        });
-
-        console.log(store.getState());
+        }));
     };
     return (
         <form onSubmit={submitNewPost}>
@@ -49,8 +52,5 @@ const AddNewPost = ({add}) => {
     )
 };
 
-const mapDispatchToProps = dispatch => ({
-    add: post => dispatch(actions.add(post))
-});
 
-export default connect(null, mapDispatchToProps)(AddNewPost);
+export default AddNewPost;

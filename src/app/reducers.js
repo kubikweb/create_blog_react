@@ -1,15 +1,8 @@
 import types from "./types";
 
 const INITIAL_STATE = {
-    posts: [
-        // {
-        //      title: "Paryż",
-        //     date: "23-09-2019",
-        //     author: "Kamila Kubik",
-        //     text: "pojechać do Paryża",
-        // },
-
-    ]
+    id: 1,
+    posts: []
 };
 
 const postsReducer = (state = INITIAL_STATE, action) => {
@@ -17,6 +10,10 @@ const postsReducer = (state = INITIAL_STATE, action) => {
         case types.ADD_POST:
             return {
                 ...state, posts: [...state.posts, action.item]
+            };
+        case types.ADD_ID:
+            return {
+                ...state, id: state.id +1
             };
 
         default:

@@ -1,12 +1,15 @@
 import React from 'react';
 import SinglePost from "./SinglePost";
+import {useSelector} from "react-redux";
 
 
 const PostsPage =({match})=> {
-    console.log(match);
+
+    const post = useSelector(state => state.posts.filter(item => item.id === match.params.id));
+    console.log(post);
     return (
         <>
-            <SinglePost id={match.params.id}/>
+            <SinglePost post={post}/>
         </>
     )
 };

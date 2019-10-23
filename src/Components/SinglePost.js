@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SinglePost = (props) => {
+const SinglePost = ({post}) => {
     return (
         <article>
-            <h1>{props.id}</h1>
+            <h1>{post.title}</h1>
         </article>
         )
 

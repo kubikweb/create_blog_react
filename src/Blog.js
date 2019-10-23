@@ -3,7 +3,9 @@ import './Blog.css';
 import PostsList from "./Components/PostsList";
 import PostsPage from "./Components/PostsPage";
 import AddNewPost from "./Components/AddNewPost";
-import {BrowserRouter as Router,  Link, Route} from "react-router-dom"
+import Home from "./Components/Home";
+import {BrowserRouter as Router,  Link, Route, Switch} from "react-router-dom"
+import SinglePost from "./Components/SinglePost";
 
 
 
@@ -14,6 +16,7 @@ const Blog = () => {
             <header>
                 <nav>
                     <ul>
+                        <li><Link to="/">Home</Link></li>
                         <li><Link to="/add_new_post">Dodaj nowy post</Link></li>
                         <li><Link to="/posts_list">Wyświetl wszystkie posty</Link></li>
                     </ul>
@@ -21,9 +24,12 @@ const Blog = () => {
             </header>
             <div className="blog">
                 <div className={"container"}>
-                    <Route path="/add_new_post" component={AddNewPost}/>
-                    <Route path="/posts_list" component={PostsList}/>
-                    <Route path="/post/:id" component={PostsPage}/>
+                    <Switch>
+                        <Route exact path ="/" component={Home}/>
+                        <Route path="/add_new_post" component={AddNewPost}/>
+                        <Route exact path="/posts_list" component={PostsList}/>
+                        <Route path="/post/:id" component={PostsPage}/>
+                    </Switch>
                 </div>
             </div>
         </Router>
