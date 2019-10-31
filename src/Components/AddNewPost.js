@@ -1,10 +1,9 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import actions from "../app/actions";
-import store from "../store";
-// import mapDispatchToProps from "react-redux/es/connect/mapDispatchToProps";
 
-const AddNewPost = ({add}) => {
+
+const AddNewPost = () => {
 
     const dispatch = useDispatch();
     const id = useSelector(state => state.id);

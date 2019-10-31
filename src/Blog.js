@@ -4,8 +4,7 @@ import PostsList from "./Components/PostsList";
 import PostsPage from "./Components/PostsPage";
 import AddNewPost from "./Components/AddNewPost";
 import Home from "./Components/Home";
-import {BrowserRouter as Router,  Link, Route, Switch} from "react-router-dom"
-import SinglePost from "./Components/SinglePost";
+import {BrowserRouter as Router,  Link, Route, Switch} from "react-router-dom";
 
 
 
